@@ -36,3 +36,5 @@
 fec/testProgs/client
 fec/testProgs/testH264VideoStreamer
 fec/testProgs/test.264
+
+libs/*
