@@ -13,9 +13,6 @@ FEC2DParityMultiplexor::FEC2DParityMultiplexor(UsageEnvironment& env, u_int8_t r
     fColumn = column;
     hostSSRC = 0;
 
-    timeoutCounter = 0;
-    whenToTimeout = 20000 * 50 * 40; /*20ms times 50 is one second times 40 is 40 seconds.*/
-
     nextTask() = envir().taskScheduler().scheduleDelayedTask(20000, (TaskFunc*)sendNext, this);
 }
 
@@ -37,11 +34,6 @@ void FEC2DParityMultiplexor::sendNext(void* firstArg) {
 }
 
 void FEC2DParityMultiplexor::repairPackets() {
-    if (timeoutCounter >= whenToTimeout) {
-        std::cout << "stopping..";
-        exit(0);
-    }
-    if (!first) timeoutCounter += 20000;
     Boolean packetsAreAvailable = False;
 
     int clustersToErase = 0;
