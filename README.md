@@ -5,8 +5,9 @@ This implementation was a part of my master's thesis which you can find here: ht
 ## How to compile:
 
 ## How to run:
-#Sender
+`#Sender
 $ ./testH264VideoStreamer 4 5 test.264
 
 #Receiver
-$ ./client 232.126.107.222 4 5 300
+$ ./client 232.126.107.222 4 5 300`
+
