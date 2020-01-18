@@ -50,8 +50,5 @@ private:
     u_int8_t fRow;
     u_int8_t fColumn;
 
-    int timeoutCounter;
-    int whenToTimeout;
-
 };
 #endif
