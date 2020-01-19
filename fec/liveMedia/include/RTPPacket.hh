@@ -15,6 +15,7 @@ public:
     RTPPacket(unsigned char* content, unsigned size);
     virtual ~RTPPacket();
 
+    Boolean padding();
     u_int16_t sequenceNumber();
     // TODO: Remove
     unsigned char* content() const {return fContent;}
