@@ -15,9 +15,19 @@ public:
     RTPPacket(unsigned char* content, unsigned size);
     virtual ~RTPPacket();
 
+    // Version
     Boolean padding();
     Boolean extension();
+    // CC
+    Boolean marker();
+    // PT
     u_int16_t sequenceNumber();
+    // Timestamp
+    // SSRC identifier
+    // CSRC identifiers
+
+
+
     // TODO: Remove
     unsigned char* content() const { return fContent; }
     unsigned size() const { return fSize; }
