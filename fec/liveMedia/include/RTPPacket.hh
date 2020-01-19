@@ -16,10 +16,11 @@ public:
     virtual ~RTPPacket();
 
     Boolean padding();
+    Boolean extension();
     u_int16_t sequenceNumber();
     // TODO: Remove
-    unsigned char* content() const {return fContent;}
-    unsigned size() const {return fSize;}
+    unsigned char* content() const { return fContent; }
+    unsigned size() const { return fSize; }
 
 private:
     unsigned char* fContent;

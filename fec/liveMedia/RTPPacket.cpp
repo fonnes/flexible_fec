@@ -21,6 +21,10 @@ Boolean RTPPacket::padding() {
     return EXTRACT_BIT(5, fContent[0]) == 1 ? True : False;
 }
 
+Boolean RTPPacket::extension() {
+    return EXTRACT_BIT(4, fContent[0]) == 1 ? True : False;
+}
+
 u_int16_t RTPPacket::sequenceNumber() {
     return (((u_int16_t)fContent[2]) << 8) | fContent[3];
 }
