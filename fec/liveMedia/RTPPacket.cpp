@@ -40,3 +40,11 @@ u_int32_t RTPPacket::timestamp() {
         (((u_int32_t)fContent[6]) << 8) |
         ((u_int32_t)fContent[7]);
 }
+
+u_int32_t RTPPacket::ssrcIdentifier() {
+    return
+        (((u_int32_t)fContent[8]) << 24) |
+        (((u_int32_t)fContent[9]) << 16) |
+        (((u_int32_t)fContent[10]) << 8) |
+        ((u_int32_t)fContent[11]);
+}

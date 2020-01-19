@@ -23,6 +23,7 @@ public:
     // PT
     u_int16_t sequenceNumber();
     u_int32_t timestamp();
+    u_int32_t ssrcIdentifier();
     // SSRC identifier
     // CSRC identifiers
 
