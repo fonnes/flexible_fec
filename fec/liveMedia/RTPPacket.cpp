@@ -32,3 +32,11 @@ Boolean RTPPacket::marker() {
 u_int16_t RTPPacket::sequenceNumber() {
     return (((u_int16_t)fContent[2]) << 8) | fContent[3];
 }
+
+u_int32_t RTPPacket::timestamp() {
+    return
+        (((u_int32_t)fContent[4]) << 24) |
+        (((u_int32_t)fContent[5]) << 16) |
+        (((u_int32_t)fContent[6]) << 8) |
+        ((u_int32_t)fContent[7]);
+}

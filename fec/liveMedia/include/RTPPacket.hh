@@ -22,7 +22,7 @@ public:
     Boolean marker();
     // PT
     u_int16_t sequenceNumber();
-    // Timestamp
+    u_int32_t timestamp();
     // SSRC identifier
     // CSRC identifiers
 
