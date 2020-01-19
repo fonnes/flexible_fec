@@ -16,3 +16,7 @@ RTPPacket::RTPPacket(unsigned char* content, unsigned size) {
 RTPPacket::~RTPPacket() {
     delete[] fContent;
 }
+
+u_int16_t RTPPacket::sequenceNumber() {
+    return (((u_int16_t)fContent[2]) << 8) | fContent[3];
+}
