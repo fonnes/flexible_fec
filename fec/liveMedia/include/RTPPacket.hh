@@ -7,14 +7,31 @@
 #define RTP_HEADER_SIZE 12
 #define EXTENSION_HEADER_ID_SIZE 2
 
+#include <liveMedia.hh>
+
 class RTPPacket {
 public:
     static RTPPacket* createNew(unsigned char* rtpPacket, unsigned rtpPacketSize);
     RTPPacket(unsigned char* content, unsigned size);
     virtual ~RTPPacket();
 
-    unsigned char* content() const {return fContent;}
-    unsigned size() const {return fSize;}
+    // Version
+    Boolean padding();
+    Boolean extension();
+    // CC
+    Boolean marker();
+    // PT
+    u_int16_t sequenceNumber();
+    u_int32_t timestamp();
+    u_int32_t ssrcIdentifier();
+    // SSRC identifier
+    // CSRC identifiers
+
+
+
+    // TODO: Remove
+    unsigned char* content() const { return fContent; }
+    unsigned size() const { return fSize; }
 
 private:
     unsigned char* fContent;
